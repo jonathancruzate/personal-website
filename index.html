@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Jonathan Cruzate is a Technical Program Manager at Google (PMP®) based in New York City." />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Jonathan Cruzate — Technical Program Manager</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f8f9fa;
+        --ink: #151a17;
+        --muted: #5b625d;
+        --line: #c9cec8;
+        --accent: #1a73e8;
+        --accent-soft: #d2e3fc;
+        --paper: rgba(255, 255, 255, 0.48);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #202124;
+          --ink: #f0f3ed;
+          --muted: #aeb7b0;
+          --line: #3a433c;
+          --accent: #8ab4f8;
+          --accent-soft: #1a3a5f;
+          --paper: rgba(255, 255, 255, 0.035);
+        }
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        min-height: 100%;
+        background: var(--bg);
+      }
+
+      body {
+        min-height: 100svh;
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Archivo", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100svh;
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        padding: clamp(1.35rem, 3.5vw, 3.25rem);
+        isolation: isolate;
+      }
+
+      .page::before {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(to right, transparent calc(100% - 1px), color-mix(in srgb, var(--line) 38%, transparent) calc(100% - 1px)),
+          linear-gradient(to bottom, transparent calc(100% - 1px), color-mix(in srgb, var(--line) 34%, transparent) calc(100% - 1px));
+        background-size: clamp(4rem, 8vw, 7.5rem) clamp(4rem, 8vw, 7.5rem);
+        opacity: .55;
+      }
+
+      .topline {
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+        width: fit-content;
+        color: var(--muted);
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .04em;
+      }
+
+      .status-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: .22rem;
+      }
+
+      .status-dot {
+        width: .42rem;
+        height: .42rem;
+        border-radius: 50%;
+      }
+
+      .status-dot:nth-child(1) { background: #4285f4; }
+      .status-dot:nth-child(2) { background: #ea4335; }
+      .status-dot:nth-child(3) { background: #fbbc05; }
+      .status-dot:nth-child(4) { background: #34a853; }
+
+      .intro {
+        align-self: center;
+        width: min(100%, 79rem);
+        padding: clamp(4.5rem, 11vh, 8rem) 0 clamp(4rem, 9vh, 7rem);
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-family: "Archivo", sans-serif;
+        font-size: clamp(4.25rem, 11.6vw, 10.75rem);
+        font-weight: 500;
+        line-height: .78;
+        letter-spacing: -.065em;
+      }
+
+      .surname {
+        display: block;
+        margin-left: clamp(1.5rem, 9vw, 9rem);
+        color: var(--accent);
+      }
+
+      .statement {
+        width: min(100%, 39rem);
+        margin: clamp(3rem, 7vw, 6.5rem) 0 0 clamp(1.5rem, 18vw, 18rem);
+        font-size: clamp(1.15rem, 2.15vw, 2rem);
+        line-height: 1.35;
+        letter-spacing: -.025em;
+      }
+
+      .statement strong {
+        font-weight: 600;
+      }
+
+      .profile-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .65rem;
+        margin: 1.35rem 0 0 clamp(1.5rem, 18vw, 18rem);
+      }
+
+      .profile-link {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        padding: .75rem 1rem;
+        border: 1px solid var(--ink);
+        border-radius: .2rem;
+        color: var(--ink);
+        font-size: .9rem;
+        font-weight: 600;
+        line-height: 1;
+        text-decoration: none;
+        transition: background-color 160ms ease, color 160ms ease;
+      }
+
+      .profile-link svg {
+        width: 1rem;
+        height: 1rem;
+        fill: currentColor;
+      }
+
+      .profile-link:hover,
+      .profile-link:focus-visible {
+        background: var(--ink);
+        color: var(--bg);
+      }
+
+      .profile-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        width: min(100%, 56rem);
+        margin-left: auto;
+        border-top: 1px solid var(--line);
+      }
+
+      .fact {
+        min-width: 0;
+        padding: 1.25rem 0 0;
+      }
+
+      .fact + .fact {
+        padding-left: clamp(1.2rem, 4vw, 4rem);
+        border-left: 1px solid var(--line);
+      }
+
+      .fact-label {
+        display: block;
+        margin-bottom: .45rem;
+        color: var(--muted);
+        font-size: .72rem;
+        font-weight: 600;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+      }
+
+      .fact-value {
+        display: block;
+        font-size: clamp(.95rem, 1.5vw, 1.15rem);
+        line-height: 1.45;
+      }
+
+      .experience {
+        width: min(100%, 68rem);
+        margin: 0 0 clamp(4rem, 8vw, 7rem) auto;
+      }
+
+      .experience h2 {
+        margin: 0 0 1.4rem;
+        color: var(--accent);
+        font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+        font-weight: 600;
+        letter-spacing: -.035em;
+      }
+
+      .experience-entry {
+        display: grid;
+        grid-template-columns: minmax(13rem, .7fr) minmax(0, 1.7fr);
+        gap: clamp(1.5rem, 5vw, 5rem);
+        padding: 1.45rem 0 1.65rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .experience-entry:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .experience-summary h3 {
+        margin: 0;
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -.015em;
+      }
+
+      .experience-company {
+        margin: .42rem 0 0;
+        font-size: .9rem;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .experience-meta {
+        margin: .65rem 0 0;
+        color: var(--muted);
+        font-size: .76rem;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .experience-points {
+        margin: 0;
+        padding-left: 1.1rem;
+        font-size: .88rem;
+        line-height: 1.48;
+      }
+
+      .experience-points li {
+        padding-left: .25rem;
+      }
+
+      .experience-points li + li {
+        margin-top: .58rem;
+      }
+
+      .experience-points li::marker {
+        color: var(--accent);
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: max(1.2rem, env(safe-area-inset-top)) 1.2rem max(1.25rem, env(safe-area-inset-bottom));
+        }
+
+        .page::before {
+          background-size: 4.5rem 4.5rem;
+          opacity: .4;
+        }
+
+        .intro {
+          padding: 4.5rem 0 5rem;
+        }
+
+        h1 {
+          font-size: clamp(4rem, 23vw, 6.4rem);
+          line-height: .82;
+        }
+
+        .surname {
+          margin-left: .42em;
+        }
+
+        .statement {
+          margin: 3rem 0 0 1.7rem;
+          max-width: 17rem;
+          font-size: 1.2rem;
+        }
+
+        .profile-links {
+          margin-left: 1.7rem;
+        }
+
+        .facts {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .fact + .fact {
+          padding: 1rem 0 0;
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+
+        .experience {
+          margin-bottom: 4rem;
+        }
+
+        .experience h2 {
+          margin-bottom: 1rem;
+        }
+
+        .experience-entry {
+          grid-template-columns: 1fr;
+          gap: .95rem;
+          padding: 1.2rem 0 1.4rem;
+        }
+
+        .experience-company {
+          max-width: 27rem;
+        }
+
+        .experience-points {
+          font-size: .86rem;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="topline" aria-label="Location">
+        <span class="status-dots" aria-hidden="true">
+          <span class="status-dot"></span>
+          <span class="status-dot"></span>
+          <span class="status-dot"></span>
+          <span class="status-dot"></span>
+        </span>
+        New York City
+      </div>
+
+      <section class="intro" aria-labelledby="name">
+        <h1 id="name">
+          Jonathan
+          <span class="surname">Cruzate.</span>
+        </h1>
+        <p class="statement"><strong>Technical Program Manager at Google</strong> · PMP® · New York City</p>
+        <div class="profile-links" aria-label="Professional profiles">
+          <a class="profile-link" href="https://www.linkedin.com/in/jonathancruzate/" target="_blank" rel="noopener noreferrer" aria-label="View Jonathan Cruzate on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"/></svg>
+            LinkedIn
+          </a>
+          <a class="profile-link" href="https://github.com/jonathancruzate" target="_blank" rel="noopener noreferrer" aria-label="View Jonathan Cruzate on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .6a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.1c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .6Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <section class="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+
+        <article class="experience-entry">
+          <div class="experience-summary">
+            <h3>Technical Program Manager</h3>
+            <p class="experience-company">Google — Core Data, Machine Learning &amp; Infrastructure</p>
+            <p class="experience-meta">New York, NY · November 2025 – Present</p>
+          </div>
+          <ul class="experience-points">
+            <li>Co-lead multi-year compute, storage, and accelerator efficiency strategy across large-scale cloud and AI/ML infrastructure, driving 4–5% fleet-wide resource-efficiency targets with 80%+ high-confidence attribution coverage.</li>
+            <li>Architect automated capacity-governance workflows and analytical models that reconcile financial spending plans with physical cluster allocations.</li>
+            <li>Design and deploy production multi-agent AI orchestration systems, background event-stream daemons, and automated quality gates.</li>
+            <li>Drive technical program management across AI/ML, personalization, serving, and infrastructure-efficiency workstreams, with standardized RAID tracking and automated executive briefings.</li>
+            <li>Guide delivery of modular project-chartering, automated issue-tree health-monitoring, and continuous documentation-synchronization tools.</li>
+            <li>Mentor TPM interns and cross-functional contributors from system design through production launch.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-summary">
+            <h3>Technical Program Manager (Contract)</h3>
+            <p class="experience-company">Google</p>
+            <p class="experience-meta">New York, NY · April 2025 – August 2025</p>
+          </div>
+          <ul class="experience-points">
+            <li>Directed a search indexing modernization program for Google Drive — an 8,000+ engineering-hour initiative migrating legacy systems to a unified, sharded ST-Spanner backend.</li>
+            <li>Resolved a critical performance bottleneck by identifying resource contention, coordinating additional compute capacity, and eliminating service throttling.</li>
+            <li>Launched a unified request management system for a core authorization service, streamlining feature intake from Google Drive, YouTube, and other major teams.</li>
+            <li>Authored the official project management framework for the 100+ employee Storage Ecosystem, standardizing planning, estimation, and OKR alignment.</li>
+          </ul>
+        </article>
+      </section>
+
+      <footer class="facts" aria-label="Professional details">
+        <div class="fact">
+          <span class="fact-label">Role</span>
+          <span class="fact-value">Technical Program Manager, PMP®</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Based in</span>
+          <span class="fact-value">New York City</span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
