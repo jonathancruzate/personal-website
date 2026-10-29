@@ -504,6 +504,19 @@
 
         <article class="experience-entry">
           <div class="experience-summary">
+            <h3>Google Location Sharing Connector</h3>
+            <p class="experience-company">Open Source — Python / Reverse Engineering</p>
+            <p class="experience-meta">October 2026 · <a href="https://github.com/jonathancruzate/google-location-sharing-connector" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/google-location-sharing-connector</a></p>
+          </div>
+          <ul class="experience-points">
+            <li>Command-line reader for Google Maps Location Sharing — who is sharing with you, where, how fresh, and their phone battery — through the same internal RPC the Maps web app calls; no official API exists for this data.</li>
+            <li>Contract reverse engineered from the open-source locationsharinglib client with REA plus live probes; cookie-session auth with the session minted in a dedicated local Chromium, including a stdin-only password pipe that shreds its Password Manager export before parsing.</li>
+            <li>Corrected the source client's session-validation rule with live evidence — a live session still redirects through Google's SetOSID flow — so the connector validates against the RPC payload shape instead.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-summary">
             <h3>One UI 9 Meta Muse Widget</h3>
             <p class="experience-company">Open Source — Android / Java</p>
             <p class="experience-meta">October 2026 · <a href="https://github.com/jonathancruzate/oneui9-meta-muse-widget" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/oneui9-meta-muse-widget</a></p>
@@ -536,7 +549,7 @@
           </div>
           <ul class="experience-points">
             <li>Custom connectors for Muse (Meta's personal AI agent) — the unofficial-API shelf.</li>
-            <li>Resy, Winix, and SmartThings Find connectors, built and run in production.</li>
+            <li>Resy, Winix, SmartThings Find, and Google Location Sharing connectors, built and run in production.</li>
           </ul>
         </article>
 
