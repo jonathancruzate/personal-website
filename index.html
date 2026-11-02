@@ -504,6 +504,19 @@
 
         <article class="experience-entry">
           <div class="experience-summary">
+            <h3>Muse–Gemini Spark A2A Bridge</h3>
+            <p class="experience-company">Open Source — Google Sheets / Apps Script</p>
+            <p class="experience-meta">November 2026 · <a href="https://github.com/jonathancruzate/muse-gemini-a2a-bridge" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/muse-gemini-a2a-bridge</a></p>
+          </div>
+          <ul class="experience-points">
+            <li>Event-driven agent-to-agent communication between two personal AI agents — Muse and Gemini Spark — with no human relaying messages and no hourly polling.</li>
+            <li>A shared Google Sheet is the mailbox (Requests / Results / Notes); a bound Apps Script On change trigger sends an "A2A-Event" alert email the moment a request lands, and an email-triggered Gemini Spark schedule processes the queue immediately.</li>
+            <li>Both directions ride the Sheet because custom-MCP write calls stall unattended Gemini runs on Allow/Deny prompts; requests stay structured JSON, matched and deduplicated by a per-request token.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-summary">
             <h3>Google Location Sharing Connector</h3>
             <p class="experience-company">Open Source — Python / Reverse Engineering</p>
             <p class="experience-meta">October 2026 · <a href="https://github.com/jonathancruzate/google-location-sharing-connector" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/google-location-sharing-connector</a></p>
@@ -573,7 +586,7 @@
             <p class="experience-meta">October 2026 · <a href="https://github.com/jonathancruzate/muse-file-search" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/muse-file-search</a></p>
           </div>
           <ul class="experience-points">
-            <li>One search across local files, Google Drive, OneDrive, Dropbox, Google Keep, and email headers.</li>
+            <li>One search across local files, Google Drive, OneDrive, Dropbox, Google Keep, Google Photos, and email headers.</li>
             <li>Prebuilt local indexes (~240k records) answer queries in about a second with zero model calls and no network — a deterministic script, not an LLM.</li>
             <li>Watermark-incremental index refresh with a live CLI fallback on index misses.</li>
           </ul>
