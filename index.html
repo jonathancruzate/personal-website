@@ -504,13 +504,14 @@
 
         <article class="experience-entry">
           <div class="experience-summary">
-            <h3>Muse Phone Bridge</h3>
-            <p class="experience-company">Open Source — Android / Java</p>
-            <p class="experience-meta">November 2026 · <a href="https://github.com/jonathancruzate/muse-phone-bridge" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/muse-phone-bridge</a></p>
+            <h3>Shield Wi-Fi Sense</h3>
+            <p class="experience-company">Open Source — Android / Java · Python</p>
+            <p class="experience-meta">November 2026 · <a href="https://github.com/jonathancruzate/shield-wifi-sense" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/shield-wifi-sense</a></p>
           </div>
           <ul class="experience-points">
-            <li>Android control-plane app that complements MacroDroid for my smart home's mode system: it reads ground truth from the Modes and Routines app's own status notifications and pulls desired state from my Cloudflare Worker, issuing verified acks only when the observed mode actually matches.</li>
-            <li>Framework-only Android, built with REA-driven research; v1.0.0 ships a Phase 0 on-device probe and the Phase 1 shadow reconciler, which observes and plans drift repairs but never fires.</li>
+            <li>Wi-Fi wave sensing from a wired NVIDIA Shield TV: an Android TV app samples Wi-Fi scan/link state at 2 Hz, and a host sampler pulls it over ADB into an RSSI time series — the living room becomes a fixed RF observation point without giving up Ethernet.</li>
+            <li>Per-point RSSI variance feeds a smart-home presence-corroboration layer as a low-weight, anonymous vote that can corroborate or challenge a location verdict but never fire one — a flat series abstains by design.</li>
+            <li>Honestly scoped: RSSI-class sensing, not CSI. Android exposes no CSI API at any permission level (and the Shield Pro has no Wi-Fi RTT/Aware) — the repo documents exactly where the ceiling is and why.</li>
           </ul>
         </article>
 
