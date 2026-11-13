@@ -504,6 +504,19 @@
 
         <article class="experience-entry">
           <div class="experience-summary">
+            <h3>Kasm Form Front Door</h3>
+            <p class="experience-company">Open Source — Python / asyncio</p>
+            <p class="experience-meta">November 2026 · <a href="https://github.com/jonathancruzate/kasm-form-frontdoor" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/kasm-form-frontdoor</a></p>
+          </div>
+          <ul class="experience-points">
+            <li>A standard HTML form sign-in and session-cookie gate in front of KasmVNC: Kasm's own login is the browser's native basic-auth prompt, which no browser automation can fill, so the front door verifies the same credential itself and proxies HTTP and WebSocket traffic to Kasm, presenting Kasm's credential server-side while Kasm's own authentication stays fully enabled behind it.</li>
+            <li>Built to surface single app windows from a home server — KasmVNC with kasmxproxy over an app's existing X display, reached through a Tailscale Funnel — as native, takeover-able browser windows, signed in by default.</li>
+            <li>Pure Python standard library (asyncio), configured entirely through environment variables, with a systemd unit template; MIT licensed.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-summary">
             <h3>Shield Wi-Fi Sense</h3>
             <p class="experience-company">Open Source — Android / Java · Python</p>
             <p class="experience-meta">November 2026 · <a href="https://github.com/jonathancruzate/shield-wifi-sense" target="_blank" rel="noopener noreferrer">github.com/jonathancruzate/shield-wifi-sense</a></p>
